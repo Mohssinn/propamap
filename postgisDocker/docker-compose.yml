@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  postgiss:
+    container_name: postgiss
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    build: .
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
